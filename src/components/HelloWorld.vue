@@ -1,118 +1,67 @@
 <template>
   <div class="hello">
-   <div class="btn-group" role="group" aria-label="...">  
-      <button type="button" class="btn btn-default">Left</button>  
-      <button type="button" class="btn btn-default">Middle</button>  
-      <button type="button" class="btn btn-default">Right</button>  
-    </div> 
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li>
-        <a
-          href="https://vuejs.org"
-          target="_blank"
-        >
-          Core Docs
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://forum.vuejs.org"
-          target="_blank"
-        >
-          Forum
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://chat.vuejs.org"
-          target="_blank"
-        >
-          Community Chat
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://twitter.com/vuejs"
-          target="_blank"
-        >
-          Twitter
-        </a>
-      </li>
-      <br>
-      <li>
-        <a
-          href="http://vuejs-templates.github.io/webpack/"
-          target="_blank"
-        >
-          Docs for This Template
-        </a>
-      </li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li>
-        <a
-          href="http://router.vuejs.org/"
-          target="_blank"
-        >
-          vue-router
-        </a>
-      </li>
-      <li>
-        <a
-          href="http://vuex.vuejs.org/"
-          target="_blank"
-        >
-          vuex
-        </a>
-      </li>
-      <li>
-        <a
-          href="http://vue-loader.vuejs.org/"
-          target="_blank"
-        >
-          vue-loader
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://github.com/vuejs/awesome-vue"
-          target="_blank"
-        >
-          awesome-vue
-        </a>
-      </li>
-    </ul>
+    <div class="login_layout">
+      <div class="form-group">
+      
+        <input
+          type="email"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+          placeholder="请输入账号"
+        />
+      </div>
+      <div class="form-group">
+    
+        <input
+          type="email"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+          placeholder="请输入密码"
+        />
+        
+      </div>
+
+    <button type="button" class="btn btn-primary">Primary</button>
+      <!-- <button type="button" class="btn btn-primary">提交审核</button>
+    <button type="button" class="btn btn-secondary">Secondary</button>
+      <button type="button" class="btn btn-info">Info</button>-->
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
-  data () {
+  name: "HelloWorld",
+  data() {
     return {
-      msg: 'Welcome to Your Vue.js App'
-    }
+      msg: "Welcome to Your Vue.js App"
+    };
   }
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
-  font-weight: normal;
+.hello {
+  text-align: center;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
+.login_layout {
+  display: inline-table;
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
+
+
+.form-control{
+  width: 300px;
+  font-size: 14px;
+  padding: 21px;
 }
-a {
-  color: #42b983;
+
+.btn-primary{
+  font-size: 14px;
+  width:200px;
 }
+
+
 </style>
