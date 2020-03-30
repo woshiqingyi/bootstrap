@@ -1,8 +1,8 @@
 <template>
   <div class="hello">
     <div class="login_layout">
+      <h1 class="h3 mb-3 font-weight-normal">登陆我的账号</h1>
       <div class="form-group">
-      
         <input
           type="email"
           class="form-control"
@@ -48,19 +48,29 @@ export default {
   text-align: center;
 }
 .login_layout {
+  margin-top: 30px;
+  width: 500px;
+/*   background-color: whitesmoke; */
   display: inline-table;
+  height: 360px;
 }
 
-
 .form-control{
+  display: inline-table;
   width: 300px;
-  font-size: 14px;
-  padding: 21px;
+  font-size: 15px;
+  padding: 23px;
 }
 
 .btn-primary{
   font-size: 14px;
-  width:200px;
+  width:300px;
+  padding: 11px;
+}
+
+.font-weight-normal{
+  margin-top: 55px;
+  margin-bottom: 10px;
 }
 
 
