@@ -2,7 +2,7 @@
   <div class="hello">
     <div class="login_layout">
       <h1 class="h3 mb-3 font-weight-normal">登陆我的账号</h1>
-      <div class="form-group">
+      <!-- <div class="form-group">
         <input
           type="email"
           class="form-control"
@@ -10,9 +10,16 @@
           aria-describedby="emailHelp"
           placeholder="请输入账号"
         />
-      </div>
+      </div> -->
       <div class="form-group">
-    
+          <input
+          type="email"
+          style="border-"
+          class="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+          placeholder="请输入账号"
+        />
         <input
           type="email"
           class="form-control"
@@ -20,13 +27,15 @@
           aria-describedby="emailHelp"
           placeholder="请输入密码"
         />
-        
       </div>
 
-    <button type="button" class="btn btn-primary">Primary</button>
+      <button type="button" class="btn btn-primary">登录</button>
       <!-- <button type="button" class="btn btn-primary">提交审核</button>
     <button type="button" class="btn btn-secondary">Secondary</button>
       <button type="button" class="btn btn-info">Info</button>-->
+    </div>
+    <div class="col-md-4">
+      
     </div>
   </div>
 </template>
@@ -46,32 +55,41 @@ export default {
 <style scoped>
 .hello {
   text-align: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  background-color: rgb(240, 240, 240);
 }
 .login_layout {
-  margin-top: 30px;
-  width: 500px;
-/*   background-color: whitesmoke; */
+  margin-top: 120px;
+  width: 550px;
   display: inline-table;
   height: 360px;
 }
 
-.form-control{
+.form-control {
   display: inline-table;
   width: 300px;
   font-size: 15px;
   padding: 23px;
 }
 
-.btn-primary{
-  font-size: 14px;
-  width:300px;
-  padding: 11px;
+.btn-primary {
+  font-size: 16px;
+  width: 300px;
+  padding: 10px;
 }
 
-.font-weight-normal{
+.font-weight-normal {
   margin-top: 55px;
   margin-bottom: 10px;
 }
+
+
+
 
 
 </style>
