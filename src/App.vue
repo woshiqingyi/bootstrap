@@ -5,8 +5,22 @@
 </template>
 
 <script>
+
 export default {
-  name: 'App'
+  name: 'App',
+  data(){
+    return{
+     
+    }
+  },
+   mounted() {
+    window.onresize = () => {
+      return (() => {
+        var dWidth = document.documentElement.clientWidth;
+        window.WIDTH = dWidth
+      })();
+    };
+  },
 }
 </script>
 

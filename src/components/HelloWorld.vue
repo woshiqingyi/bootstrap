@@ -1,5 +1,6 @@
 <template>
   <div class="hello">
+    <button @click="dianji">按钮</button>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <a class="navbar-brand" href="#">Blacksheeps</a>
       <button
@@ -52,48 +53,62 @@
       <p class="lead">这里是我的小商铺，只卖我信得过的东西</p>
       <p>不赚钱只是交个朋友</p>
     </div>
-    <!-- <div class="card" style="width: 18rem;">
-      <img src="@/assets/honglou.jpg" class="card-img-top" alt />
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p
-          class="card-text"
-        >Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div> -->
-    <!-- <div class="card" style="width: 18rem;">
-  <img src="" class="card-img-top" alt="">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-    </div>-->
-    <!-- 
-<div class="card" style="width: 18rem;">
-  <img src="@/assets/logo.png"  class="card-img-top" alt="">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-    </div>-->
+<!-- :class="$test.test()>350?product_layout2:product_layout1" -->
+    <div class="product">
+      <div >
+        <div class="product_mini_layout">
+          <div class="card" style="width:18rem">
+            <img src="@/assets/2.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p
+                class="card-text"
+              >Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
 
-    <!--  <ul class="nav justify-content-center">
-      <li class="nav-item">
-        <a class="nav-link active" href="#">书籍</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">礼品</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">海货</a>
-      </li>
-       <li class="nav-item">
-        <a class="nav-link" href="#">其他</a>
-      </li>
-    </ul>-->
+        <div class="product_mini_layout">
+          <div class="card" style="width: 18rem;">
+            <img src="@/assets/2.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p
+                class="card-text"
+              >Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product_mini_layout">
+          <div class="card" style="width: 18rem;">
+            <img src="@/assets/2.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p
+                class="card-text"
+              >Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product_mini_layout">
+          <div class="card" style="width: 18rem;">
+            <img src="@/assets/2.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p
+                class="card-text"
+              >Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <!-- <div class="login_layout">
       <h1 class="h3 mb-3 font-weight-normal">登陆我的账号</h1>
       <div class="form-group">
@@ -124,13 +139,24 @@ export default {
   name: "HelloWorld",
   data() {
     return {
-      msg: "Welcome to Your Vue.js App"
+      msg: "Welcome to Your Vue.js App",
+      product_layout1:"display: flex;flex-wrap: wrap;align-items:center;width: 1000px;",
+      product_layout2:"display:flex;flex-direction:column;justify-content:center; align-items:center;width: 1000px;"
     };
-  }
+  },
+
+  created(){
+   console.log(this.$test.test())
+  },
+
+  methods: {
+    dianji() {
+      console.log("WIDTH", WIDTH);
+    }
+  },
+
 };
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .hello {
   text-align: center;
@@ -140,7 +166,37 @@ export default {
   top: 0;
   left: 0;
   overflow-y: auto;
-  /* background-color: rgb(240, 240, 240); */
+  background-color: rgb(240, 240, 240);
+}
+
+.product {
+  display: flex;
+  justify-content: center;
+}
+
+.product_layout1 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 1000px;
+}
+
+.product_layout2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 1000px;
+}
+
+.product_mini_layout {
+  width: 33.1%;
+  min-width: 250px;
+  padding-bottom: 20px;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .btn {
@@ -179,7 +235,11 @@ export default {
   font-size: 15px;
 }
 
-.card-img-top{
+.card-img-top {
   background-color: whitesmoke;
+}
+
+.jumbotron {
+  background-color: white;
 }
 </style>

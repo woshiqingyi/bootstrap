@@ -8,6 +8,8 @@ import 'jquery'
 Vue.config.productionTip = false
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
+import $test from '@/assets/dislayout.js';
+Vue.prototype.$test=$test
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
