@@ -3,21 +3,27 @@
     <router-view/>
   </div>
 </template>
-
 <script>
 
 export default {
   name: 'App',
-  data(){
-    return{
-     
+  created(){
+    this.getWight()
+  },
+  methods:{
+    getWight(){
+       var Width = document.documentElement.clientWidth;
+        /* if(Width>300){
+          window.product_layout = 'display:flex;flex-wrap:wrap;align-items:center;width:1000px;'
+        }else{
+          window.product_layout = 'display:flex;flex-direction:column;justify-content:center;align-items:center; width:1000px;'
+        } */
     }
   },
    mounted() {
     window.onresize = () => {
       return (() => {
-        var dWidth = document.documentElement.clientWidth;
-        window.WIDTH = dWidth
+       /*  this.getWight() */
       })();
     };
   },

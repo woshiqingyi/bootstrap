@@ -1,6 +1,5 @@
 <template>
   <div class="hello">
-    <button @click="dianji">按钮</button>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <a class="navbar-brand" href="#">Blacksheeps</a>
       <button
@@ -55,10 +54,37 @@
     </div>
 <!-- :class="$test.test()>350?product_layout2:product_layout1" -->
     <div class="product">
-      <div >
+      <div :style='WIDTH> 900?product_layout1:product_layout2'>
         <div class="product_mini_layout">
           <div class="card" style="width:18rem">
-            <img src="@/assets/2.jpg" class="card-img-top" alt="..." />
+            <img src="@/assets/5.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">语言的突破 </h5>
+              <h6 class="card-title" style="color:red;font-weight:600;font-size:18px">RMB 100</h6>
+             <!--  <p
+                class="card-text"
+              >未拆分十层新</p> -->
+              <a href="#" class="btn btn-primary">查看详情</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product_mini_layout">
+          <div class="card" style="width: 18rem;">
+            <img src="@/assets/5.jpg" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+             <!--  <p
+                class="card-text"
+              >Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="product_mini_layout">
+          <div class="card" style="width: 18rem;">
+            <img src="@/assets/5.jpg" class="card-img-top" alt="..." />
             <div class="card-body">
               <h5 class="card-title">Card title</h5>
               <p
@@ -71,33 +97,7 @@
 
         <div class="product_mini_layout">
           <div class="card" style="width: 18rem;">
-            <img src="@/assets/2.jpg" class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p
-                class="card-text"
-              >Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="product_mini_layout">
-          <div class="card" style="width: 18rem;">
-            <img src="@/assets/2.jpg" class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p
-                class="card-text"
-              >Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="product_mini_layout">
-          <div class="card" style="width: 18rem;">
-            <img src="@/assets/2.jpg" class="card-img-top" alt="..." />
+            <img src="@/assets/5.jpg" class="card-img-top" alt="..." />
             <div class="card-body">
               <h5 class="card-title">Card title</h5>
               <p
@@ -109,28 +109,7 @@
         </div>
       </div>
     </div>
-    <!-- <div class="login_layout">
-      <h1 class="h3 mb-3 font-weight-normal">登陆我的账号</h1>
-      <div class="form-group">
-        <input
-          type="email"
-          style="border-"
-          class="form-control"
-          id="exampleInputEmail1"
-          aria-describedby="emailHelp"
-          placeholder="请输入账号"
-        />
-        <input
-          type="email"
-          class="form-control"
-          id="exampleInputEmail1"
-          aria-describedby="emailHelp"
-          placeholder="请输入密码"
-        />
-      </div>
-      <button type="button" class="btn btn-primary">登录</button>
-    </div>-->
-    <!--   <button type="button" class="btn btn-primary">登录按钮</button> -->
+   
   </div>
 </template>
 
@@ -139,21 +118,33 @@ export default {
   name: "HelloWorld",
   data() {
     return {
+      WIDTH:'',
+      product_layout:'',
       msg: "Welcome to Your Vue.js App",
-      product_layout1:"display: flex;flex-wrap: wrap;align-items:center;width: 1000px;",
+      product_layout1:"display:flex;flex-wrap:wrap;align-items:center;width: 1000px;",
       product_layout2:"display:flex;flex-direction:column;justify-content:center; align-items:center;width: 1000px;"
     };
   },
 
   created(){
-   console.log(this.$test.test())
+    this.WIDTH = document.documentElement.clientWidth
+  },
+
+  mounted() {
+    window.onresize = () => {
+      return (() => {
+       this.WIDTH = document.documentElement.clientWidth
+      })();
+    };
   },
 
   methods: {
     dianji() {
-      console.log("WIDTH", WIDTH);
+    
     }
   },
+
+  
 
 };
 </script>
@@ -193,7 +184,6 @@ export default {
   width: 33.1%;
   min-width: 250px;
   padding-bottom: 20px;
-  background-color: red;
   display: flex;
   justify-content: center;
   align-items: center;
